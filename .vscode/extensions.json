@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "dsznajder.es7-react-js-snippets",
+    "eamodio.gitlens",
+    "wix.vscode-import-cost",
+    "xabikos.JavaScriptSnippets",
+    "ms-vscode.vscode-typescript-next",
+    "firsttris.vscode-jest-runner",
+    "andys8.jest-snippets",
+    "PKief.material-icon-theme",
+    "zhuangtongfa.material-theme",
+    "christian-kohler.path-intellisense",
+    "Stepsize.tech-debt-tracker"
+  ]
+}
