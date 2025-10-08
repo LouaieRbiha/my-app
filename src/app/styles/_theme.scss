@@ -2,10 +2,7 @@
 @use './palette' as palette;
 @use './button' as button;
 
-// shadcn uses "Inter" as default font
-$shadcn-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-  'Helvetica Neue', sans-serif;
+$shadcn-font-family: 'Geist', 'Geist Fallback';
 
 // Mixin to apply the complete shadcn theme
 @mixin apply-theme {
