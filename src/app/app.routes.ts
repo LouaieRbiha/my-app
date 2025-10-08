@@ -1,8 +1,8 @@
 import { Route } from '@angular/router';
+import { Layout } from './core/layout/layout';
 import { Dashboard } from './features/dashboard/dashboard';
 import { Home } from './features/home/home';
 import { NotFound } from './shared/components/error/not-found';
-import { Layout } from './shared/components/layout/layout';
 
 export const appRoutes: Route[] = [
   {
