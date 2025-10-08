@@ -1,26 +1,14 @@
-@use '@angular/material' as mat;
-@use './_palette.scss' as palette;
-@use './_shadcn.scss' as shadcn;
+// Main index file that imports and applies all theme styles
+@use './theme' as theme;
 
-@include mat.core();
-
-/* Default: light-theme variables will be added to body by Theme service */
+// Apply theme to html element
 html {
-  color-scheme: light dark;
+  @include theme.apply-theme();
+  @include theme.apply-root-properties();
 }
 
-body.light-theme {
-  background: var(--shadcn-background);
-  color: var(--shadcn-on-background);
-}
-
-body.dark-theme {
-  background: var(--shadcn-background);
-  color: var(--shadcn-on-background);
-}
-
-/* Simple Material component colors using shadcn variables */
-mat-toolbar {
-  background: var(--shadcn-surface);
-  color: var(--shadcn-on-surface);
+// Apply body styles
+body {
+  @include theme.apply-body-styles();
+  @include theme.apply-theme-classes();
 }

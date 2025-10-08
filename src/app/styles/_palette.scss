@@ -1,75 +1,87 @@
-@use '@angular/material' as mat;
 @use 'sass:map';
+@use './shadcn' as shadcn;
 
-// Shadcn default colors (from https://ui.shadcn.com/docs/themes)
-$shadcn-primary: #18181b;
-$shadcn-secondary: #f4f4f5;
-$shadcn-accent: #6366f1;
-$shadcn-neutral: #e4e4e7;
-$shadcn-error: #ef4444;
-$shadcn-success: #22c55e;
+// Angular Material v19+ requires specific tone values (0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100)
+// These palettes match shadcn's exact default theme colors
 
-// Light palette
-$shadcn-light-palette: (
-  primary: $shadcn-primary,
-  on-primary: #fff,
-  secondary: $shadcn-secondary,
-  on-secondary: #18181b,
-  surface: #fff,
-  on-surface: #18181b,
-  background: #fff,
-  on-background: #18181b,
-  error: $shadcn-error,
-  on-error: #fff,
-  tertiary: $shadcn-accent,
-  on-tertiary: #fff,
+// Primary palette - shadcn primary is hsl(222.2 47.4% 11.2%) which is #020617 (very dark slate, almost black)
+$shadcn-primary-palette: (
+  0: #000000,
+  10: #020617,
+  // shadcn primary - dark slate
+  20: #0f172a,
+  25: #1e293b,
+  30: #334155,
+  35: #475569,
+  40: #64748b,
+  50: #94a3b8,
+  60: #cbd5e1,
+  70: #e2e8f0,
+  80: #f1f5f9,
+  90: #f8fafc,
+  95: #f8fafc,
+  98: #fafafa,
+  99: #fefefe,
+  100: #ffffff,
 );
 
-// Dark palette
-$shadcn-dark-palette: (
-  primary: #fff,
-  on-primary: $shadcn-primary,
-  secondary: #27272a,
-  on-secondary: #fff,
-  surface: #18181b,
-  on-surface: #fff,
-  background: #18181b,
-  on-background: #fff,
-  error: $shadcn-error,
-  on-error: #fff,
-  tertiary: $shadcn-accent,
-  on-tertiary: #fff,
+// Secondary palette - shadcn secondary/muted colors
+$shadcn-secondary-palette: (
+  0: #000000,
+  10: #0f172a,
+  20: #1e293b,
+  25: #334155,
+  30: #475569,
+  35: #64748b,
+  40: #94a3b8,
+  50: #cbd5e1,
+  60: #e2e8f0,
+  70: #f1f5f9,
+  80: #f8fafc,
+  90: #fafafa,
+  95: #fafafa,
+  98: #fefefe,
+  99: #ffffff,
+  100: #ffffff,
 );
 
-// Export palettes
-$shadcn-palettes: (
-  light: $shadcn-light-palette,
-  dark: $shadcn-dark-palette,
+// Neutral palette - grayscale for backgrounds and surfaces
+$shadcn-neutral-palette: (
+  0: #000000,
+  10: #0a0a0a,
+  20: #171717,
+  25: #262626,
+  30: #404040,
+  35: #525252,
+  40: #737373,
+  50: #a3a3a3,
+  60: #d4d4d4,
+  70: #e5e5e5,
+  80: #f5f5f5,
+  90: #fafafa,
+  95: #fafafa,
+  98: #fefefe,
+  99: #ffffff,
+  100: #ffffff,
 );
 
-// Mixin to output CSS variables for a palette map
-@mixin shadcn-palette-vars($palette) {
-  --shadcn-primary: #{map.get($palette, primary)};
-  --shadcn-on-primary: #{map.get($palette, on-primary)};
-  --shadcn-secondary: #{map.get($palette, secondary)};
-  --shadcn-on-secondary: #{map.get($palette, on-secondary)};
-  --shadcn-surface: #{map.get($palette, surface)};
-  --shadcn-on-surface: #{map.get($palette, on-surface)};
-  --shadcn-background: #{map.get($palette, background)};
-  --shadcn-on-background: #{map.get($palette, on-background)};
-  --shadcn-error: #{map.get($palette, error)};
-  --shadcn-on-error: #{map.get($palette, on-error)};
-  --shadcn-tertiary: #{map.get($palette, tertiary)};
-  --shadcn-on-tertiary: #{map.get($palette, on-tertiary)};
-}
-
-// Apply variables to classes used by Theme service
-.light-theme {
-  @include shadcn-palette-vars($shadcn-light-palette);
-  color-scheme: light;
-}
-
-.dark-theme {
-  @include shadcn-palette-vars($shadcn-dark-palette);
-  color-scheme: dark;
-}
+// Error palette - shadcn destructive red hsl(0 84.2% 60.2%) = #f23f3f
+$shadcn-error-palette: (
+  0: #000000,
+  10: #450a0a,
+  20: #7f1d1d,
+  25: #991b1b,
+  30: #b91c1c,
+  35: #dc2626,
+  40: #ef4444,
+  // shadcn destructive
+  50: #f87171,
+  60: #fca5a5,
+  70: #fecaca,
+  80: #fee2e2,
+  90: #fef2f2,
+  95: #fff5f5,
+  98: #fffafa,
+  99: #fffefe,
+  100: #ffffff,
+);

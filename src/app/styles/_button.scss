@@ -1,0 +1,45 @@
+@use '@angular/material' as mat;
+
+// shadcn-style button overrides for Angular Material
+@mixin apply-button-styles {
+  // Button component overrides with correct Angular v20 token names
+  @include mat.button-overrides(
+    (
+      // Filled button (mat-flat-button, mat-raised-button with color)
+      filled-container-color: light-dark(#020617, #fafafa),
+      filled-label-text-color: light-dark(#fafafa, #020617),
+      filled-container-shape: 0.375rem,
+
+      // Protected button (mat-raised-button default)
+      protected-container-color: light-dark(#020617, #fafafa),
+      protected-label-text-color: light-dark(#fafafa, #020617),
+      protected-container-shape: 0.375rem,
+
+      // Outlined button (mat-stroked-button)
+      outlined-container-shape: 0.375rem,
+      outlined-outline-color: light-dark(#e5e7eb, #374151),
+      outlined-label-text-color: light-dark(#020617, #fafafa),
+      // Text button (mat-button)
+      text-container-shape: 0.375rem,
+      text-label-text-color: light-dark(#020617, #fafafa),
+      // Tonal button
+      tonal-container-shape: 0.375rem
+    )
+  );
+
+  // FAB (Floating Action Button) overrides
+  @include mat.fab-overrides(
+    (
+      container-color: light-dark(#020617, #fafafa),
+      foreground-color: light-dark(#fafafa, #020617),
+      container-shape: 0.5rem,
+    )
+  );
+
+  // Icon buttons
+  @include mat.icon-button-overrides(
+    (
+      state-layer-color: light-dark(#020617, #fafafa),
+    )
+  );
+}
