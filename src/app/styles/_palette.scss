@@ -1,0 +1,75 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+// Shadcn default colors (from https://ui.shadcn.com/docs/themes)
+$shadcn-primary: #18181b;
+$shadcn-secondary: #f4f4f5;
+$shadcn-accent: #6366f1;
+$shadcn-neutral: #e4e4e7;
+$shadcn-error: #ef4444;
+$shadcn-success: #22c55e;
+
+// Light palette
+$shadcn-light-palette: (
+  primary: $shadcn-primary,
+  on-primary: #fff,
+  secondary: $shadcn-secondary,
+  on-secondary: #18181b,
+  surface: #fff,
+  on-surface: #18181b,
+  background: #fff,
+  on-background: #18181b,
+  error: $shadcn-error,
+  on-error: #fff,
+  tertiary: $shadcn-accent,
+  on-tertiary: #fff,
+);
+
+// Dark palette
+$shadcn-dark-palette: (
+  primary: #fff,
+  on-primary: $shadcn-primary,
+  secondary: #27272a,
+  on-secondary: #fff,
+  surface: #18181b,
+  on-surface: #fff,
+  background: #18181b,
+  on-background: #fff,
+  error: $shadcn-error,
+  on-error: #fff,
+  tertiary: $shadcn-accent,
+  on-tertiary: #fff,
+);
+
+// Export palettes
+$shadcn-palettes: (
+  light: $shadcn-light-palette,
+  dark: $shadcn-dark-palette,
+);
+
+// Mixin to output CSS variables for a palette map
+@mixin shadcn-palette-vars($palette) {
+  --shadcn-primary: #{map.get($palette, primary)};
+  --shadcn-on-primary: #{map.get($palette, on-primary)};
+  --shadcn-secondary: #{map.get($palette, secondary)};
+  --shadcn-on-secondary: #{map.get($palette, on-secondary)};
+  --shadcn-surface: #{map.get($palette, surface)};
+  --shadcn-on-surface: #{map.get($palette, on-surface)};
+  --shadcn-background: #{map.get($palette, background)};
+  --shadcn-on-background: #{map.get($palette, on-background)};
+  --shadcn-error: #{map.get($palette, error)};
+  --shadcn-on-error: #{map.get($palette, on-error)};
+  --shadcn-tertiary: #{map.get($palette, tertiary)};
+  --shadcn-on-tertiary: #{map.get($palette, on-tertiary)};
+}
+
+// Apply variables to classes used by Theme service
+.light-theme {
+  @include shadcn-palette-vars($shadcn-light-palette);
+  color-scheme: light;
+}
+
+.dark-theme {
+  @include shadcn-palette-vars($shadcn-dark-palette);
+  color-scheme: dark;
+}

@@ -1,0 +1,16 @@
+@use '@angular/material' as mat;
+
+// Shadcn uses Inter, fallback to system fonts
+$shadcn-font-family: 'Inter', 'Segoe UI', 'Arial', 'sans-serif';
+
+// Typography map for Angular Material
+$shadcn-typography: (
+  plain-family: $shadcn-font-family,
+  brand-family: $shadcn-font-family,
+  bold-weight: 700,
+  medium-weight: 500,
+  regular-weight: 400,
+);
+
+// Export typography
+$shadcn-typography-map: $shadcn-typography;

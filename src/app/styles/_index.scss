@@ -1,0 +1,26 @@
+@use '@angular/material' as mat;
+@use './_palette.scss' as palette;
+@use './_shadcn.scss' as shadcn;
+
+@include mat.core();
+
+/* Default: light-theme variables will be added to body by Theme service */
+html {
+  color-scheme: light dark;
+}
+
+body.light-theme {
+  background: var(--shadcn-background);
+  color: var(--shadcn-on-background);
+}
+
+body.dark-theme {
+  background: var(--shadcn-background);
+  color: var(--shadcn-on-background);
+}
+
+/* Simple Material component colors using shadcn variables */
+mat-toolbar {
+  background: var(--shadcn-surface);
+  color: var(--shadcn-on-surface);
+}
