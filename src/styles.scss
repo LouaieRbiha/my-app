@@ -1,34 +1,30 @@
-// Import Angular Material core
 @use '@angular/material' as mat;
+@use 'assets/styles/tokens';
+@use 'assets/styles/palettes/blue' as theme;
 
-// Import your shadcn theme
-@use './app/styles/index' as theme;
-
-// Include Material core styles (only once in your app)
-@include mat.core();
-
-// Global styles
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+html {
+  @include mat.theme(
+    (
+      color: (
+        theme-type: dark,
+        primary: theme.$primary-palette,
+        tertiary: theme.$tertiary-palette,
+      ),
+      typography: Geist,
+      density: 0,
+    )
+  );
 }
 
-// Optional: shadcn-like scrollbar
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+html,
+body {
+  height: 100%;
 }
-
-::-webkit-scrollbar-track {
-  background: transparent;
+body {
+  margin: 0;
+  font-family: Geist, sans-serif;
 }
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--foreground) / 0.2);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--foreground) / 0.3);
+body {
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
 }

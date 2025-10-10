@@ -27,26 +27,18 @@ export class Theme {
 
   private applyDarkTheme(): void {
     const body = document.body;
-    const html = document.documentElement;
 
     // Apply classes to body
-    this.renderer.addClass(body, 'dark-theme');
-    this.renderer.removeClass(body, 'light-theme');
-
-    // CRITICAL: Set color-scheme on html element for Angular Material
-    this.renderer.setStyle(html, 'color-scheme', 'dark');
+    this.renderer.addClass(body, 'dark');
+    this.renderer.removeClass(body, 'light');
   }
 
   private applyLightTheme(): void {
     const body = document.body;
-    const html = document.documentElement;
 
     // Apply classes to body
-    this.renderer.addClass(body, 'light-theme');
-    this.renderer.removeClass(body, 'dark-theme');
-
-    // CRITICAL: Set color-scheme on html element for Angular Material
-    this.renderer.setStyle(html, 'color-scheme', 'light');
+    this.renderer.addClass(body, 'light');
+    this.renderer.removeClass(body, 'dark');
   }
 
   getCurrentTheme(): 'light' | 'dark' {
