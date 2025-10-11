@@ -1,0 +1,29 @@
+@use '@angular/material' as mat;
+@use 'variables' as *;
+
+// Button specific variables
+$button-radius: calc($radius - 2px);
+$button-horizontal-spacing: calc($spacing * 4);
+$button-vertical-spacing: calc($spacing * 2);
+
+// Global button shape customization
+:root {
+  @include mat.button-overrides(
+    (
+      // Filled buttons
+      filled-container-shape: $button-radius,
+      filled-container-height: 2rem,
+
+      filled-horizontal-padding: $button-horizontal-spacing,
+
+      // Outlined buttons
+      outlined-container-shape: $button-radius,
+
+      // Text buttons
+      text-container-shape: $button-radius,
+
+      // Protected/Elevated buttons
+      protected-container-shape: $button-radius
+    )
+  );
+}

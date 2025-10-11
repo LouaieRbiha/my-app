@@ -1,12 +1,12 @@
 @use '@angular/material' as mat;
 @use 'assets/styles/tokens';
+@use 'assets/styles/elements/index';
 @use 'assets/styles/palettes/blue' as theme;
 
 html {
   @include mat.theme(
     (
       color: (
-        theme-type: dark,
         primary: theme.$primary-palette,
         tertiary: theme.$tertiary-palette,
       ),
