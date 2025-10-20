@@ -1,0 +1,10 @@
+@use '@angular/material' as mat;
+
+:root {
+  @include mat.card-overrides(
+    (
+      //   elevated-container-color: orange,
+      //   elevated-container-elevation: red,
+    )
+  );
+}

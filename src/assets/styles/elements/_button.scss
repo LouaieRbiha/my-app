@@ -1,12 +1,10 @@
 @use '@angular/material' as mat;
 @use 'variables' as *;
 
-// Button specific variables
 $button-radius: calc($radius - 2px);
 $button-horizontal-spacing: calc($spacing * 4);
 $button-vertical-spacing: calc($spacing * 2);
 
-// Global button shape customization
 :root {
   @include mat.button-overrides(
     (
