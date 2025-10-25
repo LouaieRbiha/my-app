@@ -1,3 +1,7 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+::ng-deep body.dark img.logo {
+  filter: brightness(0) invert(1);
+}
